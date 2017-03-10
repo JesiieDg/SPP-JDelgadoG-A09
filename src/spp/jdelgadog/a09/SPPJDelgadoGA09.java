@@ -18,55 +18,8 @@ public class SPPJDelgadoGA09 {
      */
     public static void main(String[] args) {
         //Scanner kb = new Scanner(System.in);
-        int filas, columnas;
-        //System.out.println("Ingrese el número de filas:  ");
-        filas = solicitaEntero("Ingrese el número de filas");
-        //System.out.println("Ingrese el número de columnas:  ");
-        columnas = solicitaEntero("Ingrese el número de columnas");
-        int matrizA[][] = new int[filas][columnas];
-        int matrizB[][] = new int[filas][columnas];
-        System.out.println("");
-        System.out.println("        Llenar Matriz A");
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
+        sumaMatrices();
 
-                matrizA[i][j] = solicitaEntero("Ingrese el valor de la fila " + i + " de la columna " + j + ":  ");
-            }
-            System.out.println("");
-        }
-        System.out.println("");
-        System.out.println("         LLenar Matriz B");
-        System.out.println("");
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-
-                matrizB[i][j] = solicitaEntero("Ingrese el valor de la fila  " + i + "de la columna " + j + ":  ");
-
-            }
-        }
-        int R[][] = new int[filas][columnas];
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                R[i][j] = matrizA[i][j] + matrizB[i][j];
-            }
-        }
-        System.out.println("");
-        System.out.println("");
-
-        System.out.println("     Suma de las matrices A y B");
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                System.out.println("   " + matrizA[i][j] + "  +  " + matrizB[i][j] + "  =  " + R[i][j]);
-            }
-        }
-        System.out.println("       Matriz Resultante");
-        for (int i = 0; i < filas; i++) {
-            System.out.print(" ");
-            for (int j = 0; j < columnas; j++) {
-                System.out.print(R[i][j] + " ");
-            }
-            System.out.println();
-        }
     }
 
     static int solicitaEntero(String mensaje) {
@@ -87,5 +40,55 @@ public class SPPJDelgadoGA09 {
             }
         } while (flag == false);
         return fila;
+    }
+    public static void sumaMatrices(){
+        int fila,columna; // checar bien!
+        fila=solicitaEntero("Ingrese el número de filas");
+        columna=solicitaEntero("Ingrese el número de columnas");
+        int matrizA[][] = new int[fila][columna];
+        int matrizB[][] = new int[fila][columna];
+        System.out.println("");
+        System.out.println("        Llenar Matriz A");
+        for (int i = 0; i < fila; i++) {
+            for (int j = 0; j < columna; j++) {
+
+                matrizA[i][j] = solicitaEntero("Ingrese el valor de la fila " + i + " de la columna " + j + ":  ");
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+        System.out.println("         LLenar Matriz B");
+        System.out.println("");
+        for (int i = 0; i < fila; i++) {
+            for (int j = 0; j < columna; j++) {
+
+                matrizB[i][j] = solicitaEntero("Ingrese el valor de la fila  " + i + "de la columna " + j + ":  ");
+
+            }
+        }
+        int R[][] = new int[fila][columna];
+        for (int i = 0; i < fila; i++) {
+            for (int j = 0; j < columna; j++) {
+                R[i][j] = matrizA[i][j] + matrizB[i][j];
+            }
+        }
+        System.out.println("");
+        System.out.println("");
+
+        System.out.println("     Suma de las matrices A y B");
+        for (int i = 0; i < fila; i++) {
+            for (int j = 0; j < columna; j++) {
+                System.out.println("   " + matrizA[i][j] + "  +  " + matrizB[i][j] + "  =  " + R[i][j]);
+            }
+        }
+        System.out.println("       Matriz Resultante");
+        for (int i = 0; i < fila; i++) {
+            System.out.print(" ");
+            for (int j = 0; j < columna; j++) {
+                System.out.print(R[i][j] + " ");
+            }
+            System.out.println();
+        }
+        
     }
 }
